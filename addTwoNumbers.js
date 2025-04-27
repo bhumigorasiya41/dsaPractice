@@ -12,7 +12,7 @@ var addTwoNumbers = function (l1, l2) {
   const maxLength = l1.length > l2.length ? l1.length : l2.length;
   const ans = [];
   let extra = 0;
-  for (let i = 0; i <= maxLength; i++) {
+  for (let i = 0; i < maxLength; i++) {
     const sum = +(l1[i] || 0) + +(l2[i] || 0) + +extra;
     const modifySum = sum.toString().split("");
     if (modifySum.length > 1) {
@@ -23,7 +23,7 @@ var addTwoNumbers = function (l1, l2) {
       ans.push(modifySum[0]);
     }
   }
-  if (extra) {
+  if (+extra) {
     ans.push(extra);
   }
   return ans;
